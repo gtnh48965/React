@@ -1,21 +1,21 @@
-import React from "react"
+import React from "react";
 
-
-
-const Weather = props =>{
-    return(
+const Weather = ({ error, data }) => {
+  return (
     <div>
-    { props.city  &&
-    <div>
-    <p>Местоположение:{props.city},{props.country} </p>
-    <p>Температура:{props.temp}</p>
-    <p>Давление:{props.pressure}</p>
-    <p>Заход солнца:{props.sunset}</p>
+      {data && (
+        <div>
+          <p>
+            Местоположение:{data.city},{data.country}{" "}
+          </p>
+          <p>Температура:{data.temp}</p>
+          <p>Давление:{data.pressure}</p>
+          <p>Заход солнца:{data.sunset}</p>
+        </div>
+      )}
+      {error && <p>{error}</p>}
     </div>
-}
-<p>{props.error}</p>
-</div>
-    );
-}
+  );
+};
 
-export default Weather
+export default Weather;
