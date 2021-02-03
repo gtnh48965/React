@@ -7,7 +7,7 @@ export default class MessageField extends React.Component{
     };
 
     handleClick = () => {
-        this.setState({messages: [ ...this.state.messages, 'Нормально']});
+        this.setState({messages: [ ...this.state.messages, 'но']});
     
     };
     componentDidUpdate(){
