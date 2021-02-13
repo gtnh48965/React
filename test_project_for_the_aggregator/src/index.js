@@ -2,10 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// import AppBarr from './components/AppBarr'
+
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* <AppBarr/> */}
     <App />
   </React.StrictMode>,
   document.getElementById('root')

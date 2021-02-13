@@ -24,8 +24,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
+import logo from '../src/logo.svg'
+import { createMuiTheme } from '@material-ui/core/styles';
+import purple from '@material-ui/core/colors/purple';
+
 
 const useStyles = makeStyles((theme) => ({
+
+
   root:{
     flexGrow: 1
   },
@@ -73,6 +79,16 @@ const useStyles = makeStyles((theme) => ({
 
 }))
 
+
+
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#F7F7F7',
+    },}})
+
+
 const cards = [1,2,3,4,5,6];
 
 function App() {
@@ -94,18 +110,21 @@ function App() {
     setOpen(false);
   }
 
+
+
   return (
     <>
-  <AppBar position="fixed" >
+  <AppBar position="fixed"  color="default">
 <Container fixed>
-   <Toolbar > 
+   <Toolbar theme > 
 <IconButton className={classes.menuButton}
- edge="start" color="#F7F7F7;" aria-label="menu">
-<MenuIcon/>
+ edge="start" color="#F7F7F7;" >
+     <img src={logo} alt={"logo"}/> 
+
 </IconButton>
-<Typography variant="h6" className={classes.title}>Web developer Blog</Typography>
+<Typography variant="h6" className={classes.title}></Typography>
 <Box mr={3}>
-  <Button color="inherit" variant="outlined" onClick={handleClickOpen}>log in</Button>
+  <Button  disabled variant="outlined"  className={classes.button} onClick={handleClickOpen}>log in</Button>
   <Dialog open={open} onClose={handleClose} arial-labelleby="form-dialog-title">
       <DialogTitle id="form-dialog-title">Log in</DialogTitle>
      
@@ -132,7 +151,7 @@ function App() {
   </DialogActions>
   </Dialog>
 </Box>
-<Button color="secondary" variant="contained">Sing in</Button>
+<Button color="primary" variant="contained">Sing in</Button>
   </Toolbar> 
 </Container>
     </AppBar>
